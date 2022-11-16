@@ -10,7 +10,7 @@ namespace ConsoleAppStudying
     {
 
         public void Drink();
-        public void Puke(string name);
+        public void Puke();
 
     }
 }

@@ -15,11 +15,11 @@ namespace ConsoleAppStudying
             Console.WriteLine($"{Name} get drunk...");
             Random random = new Random();
             if (random.NextDouble() > 0.7) 
-                Puke(Name);
+                Puke();
         }
-        public void Puke(string name)
+        public void Puke()
         {
-            Console.WriteLine($"Damn...{name} puke on the floor");
+            Console.WriteLine($"Damn...{Name} puke on the floor");
         }
 
         public bool Cooking(string dish)
