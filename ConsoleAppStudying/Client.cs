@@ -11,7 +11,7 @@ namespace ConsoleAppStudying
         public void Eat(string dish)
         {
             Console.WriteLine($"{Name} eating {dish}\nWait for him.........");
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             Console.WriteLine("Done");
         }
         public Client(string name) : base(name) { }
