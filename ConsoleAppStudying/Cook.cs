@@ -9,6 +9,7 @@ namespace ConsoleAppStudying
     public class Cook : Person, IDrinkable
     {
         public string[] Dishes { get; set; }
+        public string CurrentDish { get; set; }
 
         public void Drink()
         {

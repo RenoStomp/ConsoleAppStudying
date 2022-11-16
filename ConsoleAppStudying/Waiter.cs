@@ -21,26 +21,30 @@ namespace ConsoleAppStudying
             Console.WriteLine($"Damn...{Name} puke on the floor");
         }
 
-        public void GetDish(Cook cook, string dish)
+        public bool GetDish(Cook cook, string dish, Guest guest)
         {
             if (cook.Cooking(dish))
             {
                 Console.WriteLine("Meal is ready!");
+                GiveFood(dish, guest);
+                return true;
             }
             else
             {
-                while (true)
-                {
-                    Console.WriteLine("Waiting for the meal........");
-                    Thread.Sleep(500);
-                }
+                Console.WriteLine("Waiting for the meal........");
+                Thread.Sleep(500);
             }
+            return false;
         }
 
-        public void GiveFood(string dish, Client client)
+        public void GiveFood(string dish, Guest guest)
         {
-            Console.WriteLine($"{Name} gave food to {client.Name}");
-            client.Eat(dish);
+            Console.WriteLine($"{Name} gave food to {guest.Name}");
+            guest.GetMeal(dish);
+        }
+        public void Apologies(Guest guest)
+        {
+            Console.WriteLine($"{Name} apologizes to {guest.Name}");
         }
         public Waiter(string name) : base(name) { }
 

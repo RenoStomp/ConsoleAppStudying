@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppStudying
 {
-    public class Client : Person
+    public class Guest : Person
     {
+        public List<string> Meals { get; set; }
+
         public void Eat(string dish)
         {
-            Console.WriteLine($"{Name} eating {dish}\nWait for him.........");
-            Thread.Sleep(2000);
-            Console.WriteLine("Done");
+            if (Settings.Menu.Contains(dish))
+            {
+                Console.WriteLine($"{Name} eating {dish}\nWait for him.........");
+                Thread.Sleep(2000);
+                Meals.Remove(dish);
+            }
+            else
+            {
+                Console.WriteLine($"{Name} eating something else");
+
+            }
+
+        }
+
+        public void GetMeal(string meal)
+        {
+            Meals.Add(meal);
         }
 
         public string OrderFood()
@@ -34,7 +50,7 @@ namespace ConsoleAppStudying
             int index = (int)rnd.NextDouble()*10;
             return meals[index];
         }
-        public Client(string name) : base(name) { }
+        public Guest(string name) : base(name) { }
 
     }
 }

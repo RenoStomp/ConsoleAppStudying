@@ -16,8 +16,36 @@ Cook luci = new Cook("Luci", luciMeals);
 
 Waiter mari = new Waiter("Mari");
 
-Client ed = new Client("Ed");
-Client bob = new Client("Bob");
+Guest ed = new Guest("Ed");
+Guest bob = new Guest("Bob");
+
+Cook[] cooks = {ashot, craig, louis, luci};
 
 #endregion
 
+string edMeal = ed.OrderFood();
+string bobMeal = bob.OrderFood();
+
+Process(cooks, mari, ed, edMeal);
+
+
+
+
+
+
+
+static void Process(Cook[] cooks, Waiter waiter, Guest guest, string meal)
+{
+    bool mealIsReady = false;
+    foreach (Cook cook in cooks)
+    {
+        if (waiter.GetDish(cook, meal, guest))
+        {
+            guest.Eat(meal);
+            mealIsReady = true;
+            break;
+        }
+    }
+    if (!mealIsReady) waiter.Apologies(guest);
+
+}
