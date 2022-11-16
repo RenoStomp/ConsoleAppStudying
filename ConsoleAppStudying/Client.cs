@@ -14,6 +14,26 @@ namespace ConsoleAppStudying
             Thread.Sleep(2000);
             Console.WriteLine("Done");
         }
+
+        public string OrderFood()
+        {
+            List<string> meals = new List<string>() 
+            { 
+                Settings.Beef, 
+                Settings.Dessert, 
+                Settings.Lamb, 
+                Settings.Salad, 
+                Settings.Soup, 
+                Settings.Hotsalad,
+                Settings.Fish,
+                Settings.Sausage,
+                Settings.Honeybeef,
+                Settings.Poultry
+            };
+            Random rnd = new Random();
+            int index = (int)rnd.NextDouble()*10;
+            return meals[index];
+        }
         public Client(string name) : base(name) { }
 
     }

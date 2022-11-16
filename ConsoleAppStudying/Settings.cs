@@ -9,16 +9,16 @@ namespace ConsoleAppStudying
 {
     static class Settings
     {
-        public static string[] Menu = new string[] 
+        public static string[] Menu = new string[]
         {
-            Poultry, 
+            Poultry,
             Beef,
             Lamb,
-            Fish, 
-            Salad, 
+            Fish,
+            Salad,
             Soup,
-            Dessert, 
-            Sausage, 
+            Dessert,
+            Sausage,
             Hotsalad,
             Honeybeef
         };
@@ -32,6 +32,5 @@ namespace ConsoleAppStudying
         public const string Sausage = "Sausage";
         public const string Hotsalad = "Hot salad";
         public const string Honeybeef = "Honey beef";
-
     }
 }

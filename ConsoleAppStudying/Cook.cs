@@ -12,7 +12,14 @@ namespace ConsoleAppStudying
 
         public void Drink()
         {
-            Console.WriteLine($"{Name} getting drunk and puke on the floor...\n");
+            Console.WriteLine($"{Name} get drunk...");
+            Random random = new Random();
+            if (random.NextDouble() > 0.7) 
+                Puke(Name);
+        }
+        public void Puke(string name)
+        {
+            Console.WriteLine($"Damn...{name} puke on the floor");
         }
 
         public bool Cooking(string dish)
@@ -29,7 +36,6 @@ namespace ConsoleAppStudying
 
             return true;
         }
-
         public Cook(string name, string[] dishes) : base(name)
         {
             Dishes = dishes;
